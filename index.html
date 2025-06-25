@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات نقل وتغليف الأثاث الاحترافية</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - El Messiri for Arabic script -->
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'El Messiri', sans-serif; /* Applied El Messiri font */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom colors, keeping similar palette but re-theming */
+        .btn-primary {
+             background-color: #A3C033; /* Accent Green */
+             color: #000000;
+        }
+        .btn-primary:hover {
+            background-color: #B6D43B; /* Lighter Accent Green */
+        }
+        .btn-secondary {
+            background-color: #B6D43B; /* Accent green */
+            color: #000000;
+        }
+        .btn-secondary:hover {
+            background-color: #A3C033; /* Slightly darker green on hover */
+        }
+        .text-primary-blue {
+            color: #003366;
+        }
+        .bg-primary-blue {
+            background-color: #003366;
+        }
+        .bg-dark-blue {
+            background-color: #002C5A;
+        }
+        .bg-accent-green {
+            background-color: #B6D43B;
+        }
+        .bg-light-gray {
+            background-color: #F5F7FA;
+        }
+        .bg-footer-navy {
+            background-color: #001D3D;
+        }
+        .bg-service-blue {
+            background-color: #004AAD;
+        }
+        /* Hero background with overlay - using slider1.jpg as primary hero image */
+        .hero-bg {
+            background-image: url('Images/car2.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark translucent overlay */
+        }
+        .hero-bg > * {
+            position: relative;
+            z-index: 1; /* Ensure content is above overlay */
+        }
+        /* Custom styles for the circular badge overlay */
+        .circular-badge {
+            background-color: #B6D43B; /* Accent green */
+            color: white;
+            border-radius: 9999px; /* Fully rounded */
+            padding: 1rem 2rem;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(30%, 30%); /* Adjust position as needed */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        /* Specific styling for the line below process steps title */
+        .process-title-underline {
+            display: inline-block;
+            position: relative;
+        }
+
+        .process-title-underline::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -8px; /* Adjust as needed */
+            width: 60px; /* Length of the underline */
+            height: 4px; /* Thickness of the underline */
+            background-color: #004AAD; /* Blue color */
+            transform: translateX(-50%);
+            border-radius: 2px; /* Slightly rounded ends */
+        }
+
+        /* Responsive adjustments for the hero image */
+        @media (max-width: 767px) {
+            .hero-content-mobile-stack {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .hero-image-mobile-hidden {
+                display: none;
+            }
+        }
+
+        /* Modal specific styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #555;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- 1. Header Section -->
+    <header class="shadow-md sticky top-0 z-50 bg-white">
+        <!-- Top Bar -->
+        <div class="bg-[#003366] text-white text-sm py-2 px-4 md:px-8">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-4 mb-2 md:mb-0">
+                    <span class="flex items-center"><i class="fas fa-phone-alt mr-2"></i> 01024888950</span>
+
+                </div>
+               
+            </div>
+        </div>
+
+        <!-- Main Nav Bar -->
+        <nav class="container mx-auto py-4 px-4 md:px-8 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/logo2.png" alt="Company Logo" class="h-10 rounded" onerror="this.onerror=null;this.src='https://placehold.co/100x40/cccccc/000000?text=Logo';">
+            </div>
+
+            <!-- Navigation Menu (Desktop) -->
+            <div class="hidden lg:flex space-x-6 text-gray-700 font-medium">
+                <a href="#" class="hover:text-primary-blue transition duration-300 relative group">الرئيسية
+                    <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary-blue transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-primary-blue transition duration-300 relative group">خدماتنا
+                    <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary-blue transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-primary-blue transition duration-300 relative group">من نحن
+                    <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary-blue transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-primary-blue transition duration-300 relative group">المدونة
+                    <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary-blue transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="hover:text-primary-blue transition duration-300 relative group">اتصل بنا
+                    <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-primary-blue transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center">
+                <button class="bg-[#A3C033] text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">اطلب عرض سعر</button>
+                
+                <button class="hidden lg:block text-gray-700 text-xl ml-[5px]"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. Hero Banner -->
+    <section class="hero-bg text-white py-20 md:py-32 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between hero-content-mobile-stack">
+            <!-- Text Content -->
+            <div class="md:w-1/2 text-center md:text-right mb-10 md:mb-0">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">نقل عفشك بدون تعب أو تلف، مع خصم 25%</h1>
+                <p class="text-lg mb-8 max-w-lg mr-auto md:mr-0">
+                    نحن متخصصون في نقل وتغليف الأثاث بأمان وسرعة، مع توفير أفضل الخدمات والضمانات لراحتك.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-end">
+                    <button class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300" onclick="showConfirmationLayer()">إتصل وإحجز لنقل العفش اليوم</button>
+                </div>
+            </div>
+            <!-- Image Overlay -->
+            <div class="md:w-1/2 flex justify-center md:justify-start">
+                <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider3.jpg" alt="[صورة فريق نقل أثاث]" class="rounded-lg shadow-2xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg w-full h-auto hero-image-mobile-hidden" onerror="this.onerror=null;this.src='https://placehold.co/500x350/cccccc/000000?text=فريق+نقل+الأثاث';">
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification Modal -->
+    <div id="qualificationModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeQualificationModal()">&times;</span>
+            <h3 class="text-2xl font-bold mb-6 text-gray-900">عايز تنقل عفش من غير قلق؟ كلمنا دلوقتى وأحنا فى خدمتك</h3>
+            <p class="text-gray-600 mb-8">
+                إضعط على الرقم..للتواصل معنا مباشرة لمعرفة التكلفة؟
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300" onclick="showPhoneNumber()">نعم، عاوز أعرف التكلفة كام؟</button>
+                <button class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md font-bold hover:bg-gray-300 transition duration-300" onclick="redirectToQuoteForm()">لا، أرغب في تقديم طلب عرض سعر</button>
+            </div>
+            <div id="phoneNumberDisplay" class="mt-8 hidden">
+                <p class="text-xl font-bold text-gray-900 mb-4">اتصل بنا الآن:</p>
+                <a href="tel:01024888950" class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i> 01024888950
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Call Layer (New) -->
+    <div id="confirmationLayer" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeConfirmationLayer()">&times;</span>
+
+            <!-- Step 1: Initial Confirmation -->
+            <div id="confirmationStep1">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">هل أنت متأكد أنك تريد تفويت هذا العرض؟</h3>
+                <p class="text-gray-600 mb-8">
+                    يمكنك التحدث مباشرة مع أحد خبرائنا للحصول على الخصم فوراً!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="showFinalCallStep()" class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300">نعم، أريد التحدث لخبرائنا</button>
+                    <button id="declineOfferBtn" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md font-bold hover:bg-gray-300 transition duration-300">لا، أرغب في تقديم طلب عرض سعر</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Final Call CTA -->
+            <div id="confirmationStep2" class="hidden">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">لمعرفة تكلفة نقل العفش تواصل معنا</h3>
+                <p class="text-gray-600 mb-8">
+                    اضغط مباشرة رقمنا للتواصل معنا
+                </p>
+                <a href="tel:01024888950" class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-2"></i> 01024888950
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 3. Service Highlights Row -->
+    <section class="py-12 md:py-16 bg-light-gray">
+        <div class="container mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1: نقل العفش بأمان مع تغليف احترافي وضمان ضد التلفيات، واحصل على خصم 25% و. -->
+            <div class="flex flex-col items-center p-6 rounded-lg shadow-md bg-service-blue text-white transform hover:scale-105 transition-transform duration-300">
+                <div class="text-5xl mb-4"><i class="fas fa-box-open"></i></div>
+                <h3 class="text-xl font-semibold mb-2">تغليف احترافي وخصم</h3>
+                <p class="text-center text-sm">نقل العفش بأمان مع تغليف احترافي وضمان ضد التلفيات، واحصل على خصم 25%.</p>
+            </div>
+            <!-- Card 2: نوفر ونش رفع عفش كهربائي لجميع الأدوار، آمن وسريع بدون خدوش أو كسر. -->
+            <div class="flex flex-col items-center p-6 rounded-lg shadow-md bg-white text-gray-800 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-5xl mb-4 text-service-blue"><i class="fas fa-truck-moving"></i></div>
+                <h3 class="text-xl font-semibold mb-2">ونش رفع كهربائي</h3>
+                <p class="text-center text-sm">نوفر ونش رفع عفش كهربائي لجميع الأدوار، آمن وسريع بدون خدوش أو كسر.</p>
+            </div>
+            <!-- Card 3: شركة لنقل العفش بخبرة وسرعة، مع خدمة تغليف، فك، تركيب، وخصومات يومية. -->
+            <div class="flex flex-col items-center p-6 rounded-lg shadow-md bg-accent-green text-black transform hover:scale-105 transition-transform duration-300">
+                <div class="text-5xl mb-4"><i class="fas fa-handshake"></i></div>
+                <h3 class="text-xl font-semibold mb-2">خدمة متكاملة وخصومات</h3>
+                <p class="text-center text-sm">شركة لنقل العفش بخبرة وسرعة، مع خدمة تغليف، فك، تركيب، وخصومات يومية.</p>
+            </div>
+            <!-- Card 4: احجز الآن لنقل عفش داخل أو خارج المدينة مع ونش حديث وضمان الجودة. -->
+            <div class="flex flex-col items-center p-6 rounded-lg shadow-md bg-service-blue text-white transform hover:scale-105 transition-transform duration-300">
+                <div class="text-5xl mb-4"><i class="fas fa-map-marked-alt"></i></div>
+                <h3 class="text-xl font-semibold mb-2">نقل داخلي وخارجي</h3>
+                <p class="text-center text-sm">احجز الآن لنقل عفش داخل أو خارج المدينة مع ونش حديث وضمان الجودة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Intro + Image Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-12">
+            <!-- Left Column: Text -->
+            <div class="md:w-1/2 text-center md:text-right">
+                <span class="text-service-blue font-semibold text-lg uppercase mb-2 block">خبرتنا</span>
+                <h2 class="text-4xl font-bold mb-6 text-gray-900 leading-tight">ملتزمون بنقل أثاثك بأمان واحترافية</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                    نجمع سنوات من الخبرة مع أحدث التقنيات والمعدات لتقديم حلول نقل وتغليف أثاث متميزة. فنيونا المعتمدون مدربون على التعامل مع كل التحديات، لضمان راحة بالك.
+                </p>
+                <button class="btn-primary text-black px-8 py-3 rounded-md font-semibold hover:shadow-xl transition duration-300" onclick="showConfirmationLayer()">اكتشف المزيد عنا</button>
+            </div>
+            <!-- Right Column: Image with Circular Badge -->
+            <div class="md:w-1/2 relative flex justify-center">
+                <img src="images/winch&car.webp" alt="[صورة نقل أثاث]" class="rounded-lg shadow-xl w-full h-auto object-cover max-w-lg" onerror="this.onerror=null;this.src='https://placehold.co/512x341/cccccc/000000?text=نقل+الأثاث';">
+                <div class="circular-badge absolute bottom-0 right-0 transform translate-x-1/4 translate-y-1/4 md:translate-x-1/3 md:translate-y-1/3 text-lg md:text-xl font-bold shadow-lg">
+                    خصم 25% اليوم!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Specialist Moving Services Section -->
+    <section class="py-16 md:py-24 bg-light-gray">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">خدماتنا المتخصصة في نقل الأثاث</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: نقل عفش بدون تعب أو تلف -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-service-blue text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-md">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">نقل عفش بدون تعب أو تلف</h3>
+                    <p class="text-gray-600 mb-6">
+                        نضمن لك نقل أثاثك بأمان تام وبدون أي جهد أو أضرار، مع فريق محترف.
+                    </p>
+                    <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز الآن</button>
+                </div>
+                <!-- Card 2: شركة لنقل العفش مع خصم -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-accent-green text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-md">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">شركة لنقل العفش مع خصم</h3>
+                    <p class="text-gray-600 mb-6">
+                        استفد من عروضنا وخصوماتنا المميزة على جميع خدمات نقل الأثاث.
+                    </p>
+                    <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">اكتشف الخصومات</button>
+                </div>
+                <!-- Card 3: ونش رفع العفش لجميع الأدوار -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-service-blue text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-md">
+                        <i class="fas fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">ونش رفع العفش لجميع الأدوار</h3>
+                    <p class="text-gray-600 mb-6">
+                        نقدم خدمة الونش الكهربائي لرفع وإنزال الأثاث بأمان وسرعة لأي طابق.
+                    </p>
+                    <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">اعرف المزيد</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Residential vs Commercial Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left (Residential Moving) -->
+            <div class="bg-accent-green p-8 md:p-12 rounded-lg shadow-xl relative overflow-hidden flex flex-col justify-between">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg text-gray-800 relative z-10">
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900 flex items-center">
+                        <i class="fas fa-house-user text-accent-green mr-3 text-4xl"></i> نقل الأثاث السكني
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        نقل أثاث منزلك بكل عناية واحترافية، لضمان وصوله بسلام إلى وجهته الجديدة.
+                    </p>
+                    <ul class="list-none space-y-3 mb-6">
+                        <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-accent-green mr-3"></i> نقل شقق صغيرة - <span class="font-bold ml-2">$400</span></li>
+                        <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-accent-green mr-3"></i> نقل فلل ومنازل كبيرة - <span class="font-bold ml-2">$800</span></li>
+                        <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-accent-green mr-3"></i> خدمات فك وتركيب الأثاث - <span class="font-bold ml-2">$150</span></li>
+                    </ul>
+                    <button class="btn-primary text-black px-8 py-3 rounded-md font-semibold hover:shadow-xl transition duration-300" onclick="showConfirmationLayer()">اطلب عرض سعر سكني</button>
+                </div>
+            </div>
+
+            <!-- Right (Commercial Moving) -->
+            <div class="bg-service-blue p-8 md:p-12 rounded-lg shadow-xl relative overflow-hidden flex flex-col justify-between">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg text-gray-800 relative z-10">
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900 flex items-center">
+                        <i class="fas fa-warehouse text-service-blue mr-3 text-4xl"></i> نقل الأثاث التجاري
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        حلول نقل مخصصة للمكاتب والشركات، لضمان انتقال سلس دون تعطيل العمل.
+                    </p>
+                    <ul class="list-none space-y-3 mb-6">
+                        <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-service-blue mr-3"></i> نقل مكاتب صغيرة - <span class="font-bold ml-2">$700</span></li>
+                        <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-service-blue mr-3"></i> نقل شركات ومؤسسات - <span class="font-bold ml-2">$1200</span></li>
+                        <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-service-blue mr-3"></i> نقل مستودعات - <span class="font-bold ml-2">عرض مخصص</span></li>
+                    </ul>
+                    <button class="btn-primary text-black px-8 py-3 rounded-md font-semibold hover:shadow-xl transition duration-300" onclick="showConfirmationLayer()">اطلب عرض سعر تجاري</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Process Steps Section -->
+    <section class="py-16 md:py-24 bg-light-gray">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900 process-title-underline">عملية نقل الأثاث البسيطة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 bg-white text-service-blue rounded-full flex items-center justify-center text-5xl font-bold mb-6 shadow-lg border-2 border-service-blue">
+                        <span class="text-3xl">01</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">تواصل معنا</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        اتصل بنا لمناقشة احتياجاتك في نقل الأثاث والحصول على عرض سعر مجاني.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 bg-white text-service-blue rounded-full flex items-center justify-center text-5xl font-bold mb-6 shadow-lg border-2 border-service-blue">
+                        <span class="text-3xl">02</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">خطة نقل مخصصة</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        نعد خطة نقل مفصلة تناسب جدولك الزمني ومتطلباتك المحددة.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 bg-white text-service-blue rounded-full flex items-center justify-center text-5xl font-bold mb-6 shadow-lg border-2 border-service-blue">
+                        <span class="text-3xl">03</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">تنفيذ وضمان</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        يقوم فريقنا المحترف بتنفيذ عملية النقل بدقة وعناية، مع ضمان رضاك التام.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Industries We Serve -->
+    <section class="py-16 md:py-24 bg-dark-blue text-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12">القطاعات التي نخدمها</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Industry Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/s1.jpg" alt="[صورة مبنى سكني]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=مبنى+سكني';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">المنازل والشقق السكنية</h3>
+                        <p class="text-gray-600 text-sm">نقل آمن لجميع ممتلكاتك المنزلية.</p>
+                    </div>
+                </div>
+                <!-- Industry Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/s2.jpg" alt="[صورة مكتب تجاري]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=مكتب+تجاري';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">المكاتب والمنشآت التجارية</h3>
+                        <p class="text-gray-600 text-sm">نقل سلس لأثاث ومعدات المكاتب.</p>
+                    </div>
+                </div>
+                <!-- Industry Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/s3.jpg" alt="[صورة مستودع]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=مستودع';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">المستودعات والمخازن</h3>
+                        <p class="text-gray-600 text-sm">نقل فعال للبضائع والمخزون الكبير.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="bg-white text-dark-blue border-2 border-white px-8 py-3 rounded-md font-bold hover:bg-dark-blue hover:text-white transition duration-300 shadow-md" onclick="showConfirmationLayer()">شاهد جميع القطاعات</button>
+        </div>
+    </section>
+
+    <!-- New Articles Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900 process-title-underline">أبرز مقالاتنا وخدماتنا</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <!-- Article Card: نقل عفش سريع وآمن دائمًا -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/side10.jpg" alt="[صورة نقل عفش سريع وآمن]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=نقل+سريع';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">نقل عفش سريع وآمن دائمًا</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            سرعة وأمان مضمونان، لنقل أثاثك بأفضل الطرق الممكنة.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-bolt ml-2 text-lg text-service-blue"></i>
+                            <span>سرعة وأمان مضمونان</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: أفضل شركة لنقل العفش الآن -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider2.jpg" alt="[صورة أفضل شركة نقل عفش]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=أفضل+شركة';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">أفضل شركة لنقل العفش الآن</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            خدمة احترافية وفورية، تجعلنا الخيار الأول لنقل أثاثك.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-trophy ml-2 text-lg text-accent-green"></i>
+                            <span>خدمة احترافية وفورية</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: ونش رفع العفش يوفر وقتك -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider11.jpg" alt="[صورة ونش رفع عفش]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=ونش+رفع';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">ونش رفع العفش يوفر وقتك</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            رفع سريع وآمن، لتوفير الجهد والوقت عند نقل أثاثك.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-hourglass-half ml-2 text-lg text-service-blue"></i>
+                            <span>رفع سريع وآمن</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: نقل العفش مع تغليف ممتاز -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/side4.jpg" alt="[صورة تغليف أثاث]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=تغليف+ممتاز';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">نقل العفش مع تغليف ممتاز</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            حماية للأثاث من الخدوش، مع مواد تغليف عالية الجودة.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-box-tissue ml-2 text-lg text-accent-green"></i>
+                            <span>حماية للأثاث من الخدوش</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: شركة لنقل العفش بدون تعب -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/side7.jpg" alt="[صورة فريق نقل عفش]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=بدون+تعب';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">شركة لنقل العفش بدون تعب</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            نوفر عليك الجهد والوقت، بفضل فريقنا المتخصص.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-hands-helping ml-2 text-lg text-service-blue"></i>
+                            <span>نوفر عليك الجهد والوقت</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: نقل عفش بأسعار مميزة -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider9.jpg" alt="[صورة أسعار نقل عفش]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=أسعار+مميزة';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">نقل عفش بأسعار مميزة</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            جودة عالية وتكلفة أقل، لتحقيق أفضل قيمة مقابل المال.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-dollar-sign ml-2 text-lg text-accent-green"></i>
+                            <span>جودة عالية وتكلفة أقل</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: ونش رفع العفش للطوابق -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/side9.jpg" alt="[صورة ونش رفع عفش للطوابق]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=ونش+للطوابق';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">ونش رفع العفش للطوابق</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            نوصل لأي دور بأمان، باستخدام أحدث تقنيات الرفع.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-building ml-2 text-lg text-service-blue"></i>
+                            <span>نوصل لأي دور بأمان</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: نقل العفش بدون تلفيات -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider4.jpg" alt="[صورة نقل عفش بدون تلفيات]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=بدون+تلفيات';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">نقل العفش بدون تلفيات</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            خبرة في حماية العفش، مع فريق مدرب لضمان السلامة.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-lock ml-2 text-lg text-accent-green"></i>
+                            <span>خبرة في حماية العفش</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                 <!-- Article Card: تغليف ونقل العفش بدقة -->
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider5.jpg" alt="[صورة تغليف ونقل العفش بدقة]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=تغليف+بدقة';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">تغليف ونقل العفش بدقة</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            أمان كامل لأثاثك، من خلال عملية تغليف ونقل محكمة.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-box-archive ml-2 text-lg text-service-blue"></i>
+                            <span>أمان كامل لأثاثك</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: أسعار ممتازة لنقل العفش -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider6.jpg" alt="[صورة أسعار نقل عفش ممتازة]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=أسعار+ممتازة';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">أسعار ممتازة لنقل العفش</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            خصومات عند الحجز الآن، لضمان أفضل قيمة ممكنة.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-tags ml-2 text-lg text-accent-green"></i>
+                            <span>خصومات عند الحجز الآن</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: نقل العفش بخدمة فورية -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider7.jpg" alt="[صورة نقل عفش بخدمة فورية]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=خدمة+فورية';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">نقل العفش بخدمة فورية</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            استجابة خلال دقائق، لضمان تلبية احتياجاتك بسرعة.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-clock-rotate-left ml-2 text-lg text-service-blue"></i>
+                            <span>استجابة خلال دقائق</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article Card: شركة نقل عفش موثوقة -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/slider8.jpg" alt="[صورة شركة نقل عفش موثوقة]" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x192/cccccc/000000?text=شركة+موثوقة';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">شركة نقل عفش موثوقة</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            تقييمات عملاء ممتازة، تعكس جودة خدماتنا وثقتهم بنا.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-700 mb-4">
+                            <i class="fas fa-star-half-stroke ml-2 text-lg text-accent-green"></i>
+                            <span>تقييمات عملاء ممتازة</span>
+                        </div>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Why Choose Us (Existing Section, moved after new articles section) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900">لماذا تختارنا؟</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <!-- Reason 1: خبرة طويلة في نقل العفش -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-20 h-20 text-service-blue rounded-full flex items-center justify-center text-4xl mb-4 border-2 border-service-blue shadow-md">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">خبرة طويلة</h3>
+                    <p class="text-gray-600 text-sm">سنوات من الخبرة في نقل الأثاث بأمان.</p>
+                </div>
+                <!-- Reason 2: نقل عفش سريع وآمن مضمون -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-20 h-20 text-service-blue rounded-full flex items-center justify-center text-4xl mb-4 border-2 border-service-blue shadow-md">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">آمن ومضمون</h3>
+                    <p class="text-gray-600 text-sm">نقل سريع وآمن مع ضمان على الخدمة.</p>
+                </div>
+                <!-- Reason 3: ونش رفع العفش في دقائق -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-20 h-20 text-service-blue rounded-full flex items-center justify-center text-4xl mb-4 border-2 border-service-blue shadow-md">
+                        <i class="fas fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">رفع بالونش السريع</h3>
+                    <p class="text-gray-600 text-sm">سرعة في رفع الأثاث بالونش الكهربائي.</p>
+                </div>
+                <!-- Reason 4: شركة نقل عفش بأسعار ممتازة -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-20 h-20 text-service-blue rounded-full flex items-center justify-center text-4xl mb-4 border-2 border-service-blue shadow-md">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">أسعار ممتازة</h3>
+                    <p class="text-gray-600 text-sm">أفضل الأسعار مقابل جودة عالية.</p>
+                </div>
+                <!-- Reason 5: تغليف كامل ونقل العفش بأمان -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="w-20 h-20 text-service-blue rounded-full flex items-center justify-center text-4xl mb-4 border-2 border-service-blue shadow-md">
+                        <i class="fas fa-box-tissue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">تغليف احترافي</h3>
+                    <p class="text-gray-600 text-sm">تغليف شامل للأثاث لضمان سلامته.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Quote Form Section -->
+    <section id="quoteFormSection" class="py-16 md:py-24 bg-light-gray">
+        <div class="container mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 rounded-lg overflow-hidden shadow-2xl">
+            <!-- Left: Contact Details -->
+            <div class="bg-accent-green text-white p-8 md:p-12 rounded-r-lg lg:rounded-none lg:rounded-r-lg flex flex-col justify-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">اطلب عرض سعر مجاني الآن!</h2>
+                <p class="text-lg mb-8 leading-relaxed">
+                    هل أنت مستعد لنقل عفشك بسهولة وأمان؟ اتصل بنا اليوم للحصول على عرض سعر مخصص. فريقنا مستعد لمساعدتك في جميع احتياجات نقل الأثاث.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center text-lg">
+                        <i class="fas fa-phone-alt mr-4 text-2xl"></i> <span>01024888950</span>
+                    </div>
+                    <div class="flex items-center text-lg">
+                        <i class="fas fa-envelope mr-4 text-2xl"></i> <span>info@movingcompany.com</span>
+                    </div>
+                    <div class="flex items-start text-lg">
+                        <i class="fas fa-map-marker-alt mr-4 text-2xl pt-1"></i> <span>123 شارع النقل، مدينة، منطقة، 12345</span>
+                    </div>
+                    <!-- New Call Us button for this section -->
+                    <button class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300 w-full mt-6" onclick="showConfirmationLayer()">اتصل بنا الآن: 01024888950</button>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="bg-white p-8 md:p-12 rounded-l-lg lg:rounded-none lg:rounded-l-lg">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">اطلب عرض سعر</h3>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-medium mb-2">الاسم الكامل</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-service-blue" placeholder="جون دو">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-service-blue" placeholder="john.doe@example.com">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 text-sm font-medium mb-2">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-service-blue" placeholder="(123) 456-7890">
+                    </div>
+                    <div>
+                        <label for="service" class="block text-gray-700 text-sm font-medium mb-2">الخدمة المطلوبة</label>
+                        <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-service-blue">
+                            <option value="">اختر خدمة</option>
+                            <option value="residential_moving">نقل سكني</option>
+                            <option value="commercial_moving">نقل تجاري</option>
+                            <option value="packing_unpacking">تغليف وفك وتركيب</option>
+                            <option value="crane_service">خدمة الونش</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 text-sm font-medium mb-2">رسالتك</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-service-blue" placeholder="أخبرنا المزيد عن احتياجاتك في نقل الأثاث..."></textarea>
+                    </div>
+                    <button type="submit" class="bg-[#A3C033] text-black px-8 py-3 rounded-md font-bold w-full hover:bg-[#B6D43B] transition duration-300 shadow-md">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Blog/News – Moving Tips (renamed for clarity) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-900">أحدث نصائح نقل الأثاث والأخبار</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Card 1: نقل العفش مع ضمان كامل -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/s7.jpg" alt="[صورة نقل أثاث مع ضمان]" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x224/cccccc/000000?text=ضمان+كامل';">
+                    <div class="p-6">
+                        <span class="inline-block bg-accent-green text-black text-xs font-semibold px-3 py-1 rounded-full mb-3">ضمان الخدمة</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">نقل العفش مع ضمان كامل</h3>
+                        <p class="text-gray-600 text-sm mb-4">تعرف على أهمية ضمان الخدمة عند اختيار شركة نقل الأثاث.</p>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+                <!-- Blog Card 2: نقل عفش شامل وخالي تعب -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/s8.jpg" alt="[صورة نقل عفش شامل]" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x224/cccccc/000000?text=نقل+شامل';">
+                    <div class="p-6">
+                        <span class="inline-block bg-service-blue text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">خدمة شاملة</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">نقل عفش شامل وخالي تعب</h3>
+                        <p class="text-gray-600 text-sm mb-4">اكتشف الخدمات الشاملة التي نقدمها لراحة بالك.</p>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+                <!-- Blog Card 3: ونش عفش يوفر عليك مجهود -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://raw.githubusercontent.com/code-house10/01092208251/refs/heads/main/Images/s9.jpg" alt="[صورة ونش رفع أثاث]" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x224/cccccc/000000?text=ونش+يوفر+مجهود';">
+                    <div class="p-6">
+                        <span class="inline-block bg-accent-green text-black text-xs font-semibold px-3 py-1 rounded-full mb-3">ميزة الونش</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">ونش عفش يوفر عليك مجهود</h3>
+                        <p class="text-gray-600 text-sm mb-4">نصائح وإرشادات حول كيفية توفير الجهد باستخدام الونش.</p>
+                        <button class="btn-primary text-black px-6 py-2 rounded-md font-semibold hover:bg-[#B6D43B] transition duration-300 shadow-md" onclick="showConfirmationLayer()">احجز خدمة النقل <i class="fas fa-arrow-left mr-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Footer Section -->
+    <footer class="bg-footer-navy text-white py-16 md:py-20">
+        <div class="container mx-auto px-4 md:px-8">
+            <!-- Top Row: Contact Info, Services, Support, Links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 border-b border-gray-700 pb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">شركة النقل السريع</h3>
+                    <p class="text-gray-400 mb-4">
+                        مكرسون لتقديم خدمات نقل وتغليف أثاث متميزة لبيئة خالية من المتاعب.
+                    </p>
+                    <div class="flex space-x-4 text-lg">
+                        <a href="#" class="hover:text-service-blue transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-service-blue transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-service-blue transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">خدماتنا</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">نقل سكني</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">نقل تجاري</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">تغليف الأثاث</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">خدمة الونش</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">فك وتركيب</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">من نحن</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">اتصل بنا</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">شهادات العملاء</a></li>
+                        <li><a href="#" class="hover:text-service-blue transition duration-300">الوظائف</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">معلومات الاتصال</h3>
+                    <address class="space-y-2 text-gray-400 not-italic">
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-3"></i> 123 شارع النقل، مدينة، منطقة، 12345</p>
+                        <p class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> 01024888950</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-3"></i> info@movingcompany.com</p>
+                        <p class="flex items-center"><i class="fas fa-clock mr-3"></i> الأحد - الخميس: 9 صباحًا - 5 مساءً</p>
+                    </address>
+                </div>
+            </div>
+
+            <!-- Bottom Bar: Legal Links and Icons -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 pt-6">
+                <p>&copy; 2025 شركة النقل السريع. جميع الحقوق محفوظة.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">سياسة الخصوصية</a>
+                    <a href="#" class="hover:text-white">شروط الخدمة</a>
+                    <a href="#" class="hover:text-white">خريطة الموقع</a>
+                </div>
+                <div class="flex space-x-3 mt-4 md:mt-0 text-xl">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- New Floating Offer Banner -->
+    <div id="offer-banner" class="fixed bottom-4 right-4 bg-dark-blue text-white p-4 rounded-lg shadow-2xl max-w-sm w-full z-[1001] transform transition-all duration-500 translate-y-full">
+        <button id="close-offer-banner" class="absolute top-2 left-2 text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+        <div class="flex items-center gap-4">
+            <!-- Icon -->
+            <div class="flex-shrink-0">
+                <div class="w-16 h-16 bg-accent-green rounded-full flex items-center justify-center text-black font-bold text-2xl border-4 border-white">
+                    25%
+                </div>
+            </div>
+            <!-- Text and Countdown -->
+            <div class="flex-grow text-right">
+                <h4 class="font-bold text-lg">!عرض خاص -خصم25% على نقل العفش</h4>
+                <p class="text-sm mb-2">ينتهي العرض خلال</p>
+                <div id="countdown" class="flex justify-end items-center gap-x-1.5 font-mono text-base">
+                    <!-- Hours -->
+                    <div class="flex flex-col items-center">
+                        <div id="hours" class="w-10 h-10 flex items-center justify-center bg-rose-500 text-white rounded-full text-lg font-bold shadow-md">00</div>
+                        <span class="text-xs text-gray-300 mt-1">ساعة</span>
+                    </div>
+                    <span class="text-2xl font-bold text-rose-500 -mt-4">:</span>
+                    <!-- Minutes -->
+                    <div class="flex flex-col items-center">
+                        <div id="minutes" class="w-10 h-10 flex items-center justify-center bg-rose-500 text-white rounded-full text-lg font-bold shadow-md">00</div>
+                        <span class="text-xs text-gray-300 mt-1">دقيقة</span>
+                    </div>
+                    <span class="text-2xl font-bold text-rose-500 -mt-4">:</span>
+                    <!-- Seconds -->
+                    <div class="flex flex-col items-center">
+                        <div id="seconds" class="w-10 h-10 flex items-center justify-center bg-rose-500 text-white rounded-full text-lg font-bold shadow-md">00</div>
+                        <span class="text-xs text-gray-300 mt-1">ثانية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CTA Button -->
+        <button onclick="showConfirmationLayer()" class="btn-primary w-full mt-3 py-2 text-sm font-bold rounded-md">اطلب العرض الآن</button>
+    </div>
+
+
+    <script>
+        // --- Modal Logic ---
+        const qualificationModal = document.getElementById('qualificationModal');
+        const phoneNumberDisplay = document.getElementById('phoneNumberDisplay');
+
+        function openQualificationModal() {
+            qualificationModal.classList.remove('hidden');
+            phoneNumberDisplay.classList.add('hidden'); // Hide phone number initially
+            const choiceButtons = qualificationModal.querySelector('.flex-col.sm\\:flex-row');
+            if (choiceButtons) {
+                choiceButtons.classList.remove('hidden');
+            }
+        }
+
+        function closeQualificationModal() {
+            qualificationModal.classList.add('hidden');
+        }
+
+        function showPhoneNumber() {
+            phoneNumberDisplay.classList.remove('hidden');
+            const choiceButtons = qualificationModal.querySelector('.flex-col.sm\\:flex-row');
+            if (choiceButtons) {
+                choiceButtons.classList.add('hidden');
+            }
+        }
+
+        function redirectToQuoteForm() {
+            closeQualificationModal(); // Close modal first
+            const quoteFormSection = document.getElementById('quoteFormSection');
+            if (quoteFormSection) {
+                quoteFormSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        }
+        
+        // --- New Confirmation & Offer Banner Logic ---
+        const offerBanner = document.getElementById('offer-banner');
+        const confirmationLayer = document.getElementById('confirmationLayer');
+        const confirmationStep1 = document.getElementById('confirmationStep1');
+        const confirmationStep2 = document.getElementById('confirmationStep2');
+
+
+        function showConfirmationLayer() {
+            if (offerBanner) {
+                // Hide the offer banner
+                offerBanner.classList.add('translate-y-full');
+                offerBanner.classList.remove('translate-y-0');
+            }
+            if (confirmationLayer) {
+                // Reset to step 1 every time it opens
+                if(confirmationStep1) confirmationStep1.classList.remove('hidden');
+                if(confirmationStep2) confirmationStep2.classList.add('hidden');
+                // Show the confirmation layer
+                confirmationLayer.classList.remove('hidden');
+            }
+        }
+
+        function closeConfirmationLayer() {
+            if (confirmationLayer) {
+                confirmationLayer.classList.add('hidden');
+            }
+        }
+
+        function hideConfirmationAndShowOffer() {
+            if (confirmationLayer) {
+                // Hide the confirmation layer
+                confirmationLayer.classList.add('hidden');
+            }
+            if (offerBanner) {
+                 // Ensure the banner is block-level to be visible
+                offerBanner.style.display = 'block';
+                // Use a minimal timeout to let the browser register the display change before animation
+                setTimeout(() => {
+                    // Show the offer banner again
+                    offerBanner.classList.remove('translate-y-full');
+                    offerBanner.classList.add('translate-y-0');
+                }, 10);
+            }
+        }
+
+        function showFinalCallStep() {
+            if (confirmationStep1 && confirmationStep2) {
+                confirmationStep1.classList.add('hidden');
+                confirmationStep2.classList.remove('hidden');
+            }
+        }
+
+
+        // --- Countdown Timer & Floating Offer Banner Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const closeOfferBannerBtn = document.getElementById('close-offer-banner');
+            const declineOfferBtn = document.getElementById('declineOfferBtn'); // The button in the new modal
+
+            // Attach event listener for the button in the confirmation layer
+            if (declineOfferBtn) {
+                declineOfferBtn.addEventListener('click', hideConfirmationAndShowOffer);
+            }
+            
+            if (offerBanner) {
+                // Show the bar with an animation
+                setTimeout(() => {
+                    offerBanner.classList.remove('translate-y-full');
+                    offerBanner.classList.add('translate-y-0');
+                }, 1000); // Delay showing the bar for 1 second
+
+                // Set countdown duration: 4 hours from now
+                const fourHours = 4 * 60 * 60 * 1000;
+                const countDownDate = new Date().getTime() + fourHours;
+
+                const countdownInterval = setInterval(function() {
+                    const now = new Date().getTime();
+                    const distance = countDownDate - now;
+
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result, ensuring elements exist
+                    const hoursEl = document.getElementById("hours");
+                    const minutesEl = document.getElementById("minutes");
+                    const secondsEl = document.getElementById("seconds");
+
+                    if (hoursEl) hoursEl.innerText = ('0' + hours).slice(-2);
+                    if (minutesEl) minutesEl.innerText = ('0' + minutes).slice(-2);
+                    if (secondsEl) secondsEl.innerText = ('0' + seconds).slice(-2);
+
+                    // If the count down is finished, hide the bar
+                    if (distance < 0) {
+                        clearInterval(countdownInterval);
+                        offerBanner.style.display = "none";
+                    }
+                }, 1000);
+
+                // Close button functionality
+                const closeBar = () => {
+                    offerBanner.classList.add('translate-y-full');
+                    setTimeout(() => {
+                         offerBanner.style.display = 'none';
+                    }, 500); // wait for animation to finish
+                };
+
+                if (closeOfferBannerBtn) closeOfferBannerBtn.addEventListener('click', closeBar);
+            }
+        });
+    </script>
+
+</body>
+</html>
