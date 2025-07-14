@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <button class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300" onclick="showPhoneNumber()">نعم، عاوز أعرف التكلفة كام؟</button>
-                <button class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md font-bold hover:bg-gray-300 transition duration-300" onclick="redirectToQuoteForm()">لا، أرغب في تقديم طلب عرض سعر</button>
+                <button class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md font-bold hover:bg-gray-300 transition duration-300" onclick="redirectToQuoteForm()">لا، كنت اتصفح فقط !</button>
             </div>
             <div id="phoneNumberDisplay" class="mt-8 hidden">
                 <p class="text-xl font-bold text-gray-900 mb-4">اتصل بنا الآن:</p>
@@ -262,13 +262,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- Step 1: Initial Confirmation -->
             <div id="confirmationStep1">
-                <h3 class="text-2xl font-bold mb-6 text-gray-900">هل أنت متأكد أنك تريد تفويت هذا العرض؟</h3>
+                <h3 class="text-2xl font-bold mb-6 text-gray-900">🎉 بلاش تضيّع الفرصة!
+</h3>
                 <p class="text-gray-600 mb-8">
-                    يمكنك التحدث مباشرة مع أحد خبرائنا للحصول على الخصم فوراً!
+                    كلمنا واعرف اسعارنا، وهتاخد خصمك على طول!
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="showFinalCallStep()" class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300">نعم، أريد التحدث لخبرائنا</button>
-                    <button id="declineOfferBtn" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md font-bold hover:bg-gray-300 transition duration-300">لا، أرغب في تقديم طلب عرض سعر</button>
+                    <button onclick="showFinalCallStep()" class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300">نعم عاوز أعرف تكلفة نقل العفش كام ؟</button>
+                    <button id="declineOfferBtn" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md font-bold hover:bg-gray-300 transition duration-300">لا، كنت اتصفح فقط !</button>
                 </div>
             </div>
 
@@ -276,7 +277,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div id="confirmationStep2" class="hidden">
                 <h3 class="text-2xl font-bold mb-6 text-gray-900">لمعرفة تكلفة نقل العفش تواصل معنا</h3>
                 <p class="text-gray-600 mb-8">
-                    اضغط مباشرة رقمنا للتواصل معنا
+                    اضغط مباشرة على الرقم للتوصل معنا
                 </p>
                 <a href="tel:01024924364" class="btn-primary text-black px-8 py-3 rounded-md font-bold shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center justify-center">
                     <i class="fas fa-phone-alt mr-2"></i> 01024924364
